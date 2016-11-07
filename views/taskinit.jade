@@ -1,0 +1,29 @@
+html
+    head
+        title=title
+        link(href='/css/style.css', rel='stylesheet')
+        link(href='/css/circle.css', rel='stylesheet')
+        script(src='/socket.io/socket.io.js')
+        script(src='/js/task.js')
+        script(src='http://code.jquery.com/jquery-1.11.3.min.js')
+        script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
+        //script(src='/js/papaparse.js');
+        script(type='text/javascript')
+        div.head
+            p#headerContent
+        div.notice
+            //p#noticeContent
+        body(margin="auto")
+            div#centeredPatient
+                div#objectSetup
+                    div.centered
+                        span#SetupText You will be using the highlighted object(s) in the upcoming activity
+                        // we will use javascript to generate the starting image
+                        img#objectsUsed(src="" width='30%', height='25%')
+                        span Remove any other objects that are on the mat and put them away.
+
+        a(href='/tasksetup/')  
+            div#start
+                div.centered
+                    div.forward
+                        img(src="../img/icons-all/forward.png")
