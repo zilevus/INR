@@ -50,5 +50,17 @@ exports.tasksetup=function(req, res) {
   res.render('tasksetup', {title:"Task Setup"});
 }
 exports.home=function(req, res) {
-	res.render('home', {tutle:"Home"});
+	res.render('home', {title:"Home"});
+}
+exports.videosetup=function(req, res) {
+	res.render('videosetup', {title:"Video"});
+}
+exports.armprep=function(req, res) {
+	res.render('armprep', {title:"Prep Arm"});
+}
+exports.preactivity=function(req, res) {
+	res.render('preactivity', {title:"Push To Start"});
+}
+exports.activitystarted=function(req, res) {
+	res.render('activitystarted', {title:"Activity In Progress"});
 }
