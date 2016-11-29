@@ -353,10 +353,11 @@ margin-top:auto;
 margin-bottom:auto;
 text-align: center;
 height:100%;
-color:red;
+color:#ffffff;
 font-size:36pt;
 float:left;
 width: 100%;
+background-color: red;
 }
 
 #diagIMG{

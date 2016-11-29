@@ -11,8 +11,8 @@ var curTaskID=-1;
 /*var client = net.connect(8888,'128.237.166.175',function(){
   console.log('Connected');
 });*/
-var HOST='128.173.21.172'; //Change this back to localhost
-var PORT=8888;
+var HOST='localhost'; //Change this back to localhost
+var PORT=3000;
 //var HOST='128.237.221.1';
 //var HOST='128.237.208.246';
 //handle send or receive failures and connection
@@ -33,7 +33,7 @@ client.on('error',function(err){
       });
     });
   }
-  //setTimeout(setupConnection,10000);
+  setTimeout(setupConnection,10000);
 });
 app.use(express.static(__dirname+"/public"));
 app.set('views', './views');
@@ -44,27 +44,15 @@ app.get('/', function(req, res) {
     title: 'Welcome'
   });
 });
-app.get('/patienthome/',routes.patienthome);
-app.get('/showPatient/', routes.showPatient);
-app.get('/beginsetup/', routes.beginsetup);
-app.get('/devicesetup/', routes.devicesetup);
-app.get('/syncing/', routes.syncing);
-app.get('/complete/',routes.complete);
-app.get('/removehands/',routes.removehands);
-app.get('/calibrate/',routes.calibrate);
-app.get('/completecalibrate/',routes.completecalibrate);
-app.get('/begintask/',routes.begintask);
-app.get('/starttask/',routes.starttask);
-app.get('/tasktest/',routes.taskTest);
 app.get('/taskinit/', routes.taskinit);
 app.get('/tasksetup/', routes.tasksetup);
-app.get('/thankyou/',routes.endscreen);
 app.get('/survey/', routes.survey);
 app.get('/home/', routes.home);
 app.get('/videosetup/', routes.videosetup);
 app.get('/armprep/', routes.armprep);
 app.get('/preactivity/', routes.preactivity);
 app.get('/activitystarted/', routes.activitystarted);
+app.get('/thanks/', routes.thanks);
 var startTask="{\"type\" : \"startTask\"}";
 var resetTask="{\"type\" : \"resetTask\"}";
 var endTask="{\"type\" : \"endTask\"}";
@@ -146,26 +134,13 @@ var query = connection.query(post, function(err, result) {
 //console.log(query.sql);
 console.log("worked"); // INSERT INTO posts SET `id` = 1, `title` = 'Hello MySQL'
 */
-
-app.get('/patienthome/',routes.patienthome);
-app.get('/showPatient/', routes.showPatient);
-app.get('/beginsetup/', routes.beginsetup);
-app.get('/devicesetup/', routes.devicesetup);
-app.get('/syncing/', routes.syncing);
-app.get('/complete/',routes.complete);
-app.get('/removehands/',routes.removehands);
-app.get('/calibrate/',routes.calibrate);
-app.get('/completecalibrate/',routes.completecalibrate);
-app.get('/begintask/',routes.begintask);
-app.get('/starttask/',routes.starttask);
-app.get('/tasktest/',routes.taskTest);
 app.get('/taskinit/', routes.taskinit);
 app.get('/tasksetup/', routes.tasksetup);
-app.get('/thankyou/',routes.endscreen);
 app.get('/survey/', routes.survey);
 app.get('/home/', routes.home);
 app.get('/videosetup/', routes.videosetup);
 app.get('/armprep/', routes.armprep);
 app.get('/preactivity/', routes.preactivity);
 app.get('/activitystarted/', routes.activitystarted);
-app.listen(3000)
+app.get('/thanks/', routes.thanks);
+app.listen(3001) //changed this because of interference coming from somewhere...
