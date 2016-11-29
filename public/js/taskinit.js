@@ -16,7 +16,7 @@ $(window).load(function() {
 		exerciseNum++;
 		loopNum = 1;
 	} // executes each cycle 4 times, two for the good runs, two for induced error.
-	console.log("exnum - " + exerciseNum + "loopnum - " + loopNum);
+
 	// sets the exercise picture equal to necessary number
 	$('#objectsUsed').attr("src", "../img/empty/Ex"+exerciseNum.toString()+".png");
 

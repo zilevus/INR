@@ -9,9 +9,9 @@ $(window).load(function() {
   if (firstWrite === null) {
     firstWrite = "true";
   }
-  var exerciseNum = sessionStorage.getItem("exerciseNum");
-  if (exerciseNum === null) {
-    exerciseNum = 1;
+  var exerciseNumSurvey = sessionStorage.getItem("exerciseNumSurvey");
+  if (exerciseNumSurvey === null) {
+    exerciseNumSurvey = 1;
   }
 
   var userNum = sessionStorage.getItem("userNum");
@@ -27,7 +27,7 @@ $(window).load(function() {
     firstWrite = "false";
     sessionStorage.setItem("firstWrite", firstWrite);
   }
-  var intro = "participant " + userNum.toString() + " exercise " + exerciseNum.toString();
+  var intro = "participant " + userNum.toString() + " exercise " + exerciseNumSurvey.toString();
   socket.emit("json", intro);
 
 
@@ -52,9 +52,9 @@ $(window).load(function() {
 });
   })*/
 
-exerciseNum = parseInt(exerciseNum);
+exerciseNumSurvey = parseInt(exerciseNumSurvey);
 var choices = [];
-switch (exerciseNum) {
+switch (exerciseNumSurvey) {
   case 1:
     choices = ["Pressing  or pushing a button"
     ,"Picking up phone","Closing a container"];
@@ -120,7 +120,7 @@ switch (exerciseNum) {
     break;
 }
 
-console.log(exerciseNum);
+console.log(exerciseNumSurvey);
 console.log(choices);
 
 $('#questionOne').append(choices[0]);
@@ -133,7 +133,7 @@ $('.questionDivs').on("tap", function() {
   if (clickOne == 1) {
 console.log(event.target.id);
 var output = $('#'+event.target.id).text();
-var ques1 = "Exercise " + exerciseNum + " most closely reminded of " + output.toString();
+var ques1 = "Exercise " + exerciseNumSurvey + " most closely reminded of " + output.toString();
 socket.emit("json", ques1);
 console.log(output);
 var second = [];
@@ -224,12 +224,12 @@ $(document).on("tap", function() {
     $('#topMessage').text("You are now ready to move to the next activity. Please allow a couple seconds");
     $('#topMessage').css('color', '#59595B');
     $('#whole').css('background-color', 'white');
-    exerciseNum++;
-    sessionStorage.setItem("exerciseNum", exerciseNum.toString());
-    if (exerciseNum == 13) {
+    exerciseNumSurvey++;
+    sessionStorage.setItem("exerciseNumSurvey", exerciseNumSurvey.toString());
+    if (exerciseNumSurvey == 13) {
       userNum++;
       sessionStorage.setItem("userNum", userNum);
-      sessionStorage.setItem("exerciseNum", "1");
+      sessionStorage.setItem("exerciseNumSurvey", "1");
       setTimeout(function(){
       location.replace('/thankyou');}, 3000);
     }
@@ -252,12 +252,12 @@ $('#continue').on("tap", function() {
 
 $('#done').on("tap", function(){
   //history.go(-1);
-  if (exerciseNum == 12) {
+  if (exerciseNumSurvey == 12) {
 
     location.href = '/thankyou';
   }
   else {
-    location.href = '/taskgo';
+    location.href = '/taskinit';
   }
 });
 })
