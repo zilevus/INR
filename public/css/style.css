@@ -346,6 +346,18 @@ font-size:36pt;
 float:left;
 width: 100%;
 }
+/* This is for the red, in progress screen */
+#centeredStartTask{
+display:table;
+margin-top:auto;
+margin-bottom:auto;
+text-align: center;
+height:100%;
+color:red;
+font-size:36pt;
+float:left;
+width: 100%;
+}
 
 #diagIMG{
 max-width: 85%;
