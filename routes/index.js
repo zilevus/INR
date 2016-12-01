@@ -25,3 +25,6 @@ exports.activitystarted=function(req, res) {
 exports.thanks=function(req, res) {
 	res.render('thanks', {title:"Thank You"});
 }
+exports.studyend=function(req, res) {
+    res.render('studyend', {title:"Study Concluded"});
+}

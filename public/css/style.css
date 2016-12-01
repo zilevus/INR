@@ -15,13 +15,14 @@ font-style: normal;
 
 .notice{
 	position: fixed;
+    right: 15%;
 	top: 35%;
 	text-align: center;
 	z-index: 999;
 }
 #noticeContent{
-	position: fixed;
-	top: 7%;
+	/*position: fixed;*/
+	margin-top: 7%;
 	left: 12%;
 	width: 85%;
 	font-size: 40px;

@@ -30,28 +30,6 @@ $(window).load(function() {
   var intro = "participant " + userNum.toString() + " exercise " + exerciseNumSurvey.toString();
   socket.emit("json", intro);
 
-
-/*  var one = Math.floor((Math.random() * 8) + 0);
-  var two = Math.floor((Math.random() * 8) + 0);
-  while (one == two) {
-    two = Math.floor((Math.random() * 8) + 0);
-  }
-  var three = Math.floor((Math.random() * 8) + 0);
-  while (one == two || two == three || one == three) {
-    three = Math.floor((Math.random() * 8) + 0);
-  }
-
-  var secondQuestionChoices = [surveyOptions[one], surveyOptions[two],
-                                  surveyOptions[three]];*/
-
-
-  /*$('#questionOneDiv').on("tap", function(){
-    fs.appendFile('message.txt', 'data to append', (err) => {
-        if (err) throw err;
-        console.log('The "data to append" was appended to file!');
-});
-  })*/
-
 exerciseNumSurvey = parseInt(exerciseNumSurvey);
 var choices = [];
 switch (exerciseNumSurvey) {
@@ -235,7 +213,7 @@ $(document).on("tap", function() {
     }
     else {
       setTimeout(function(){
-        location.replace('/taskgo');}, 3000);
+        location.replace('/taskinit');}, 3000);
     }
   }
 })
@@ -251,10 +229,9 @@ $('#continue').on("tap", function() {
 
 
 $('#done').on("tap", function(){
-  //history.go(-1);
   if (exerciseNumSurvey == 12) {
 
-    location.href = '/thankyou';
+    location.href = '/studyend';
   }
   else {
     location.href = '/taskinit';

@@ -11,30 +11,30 @@ var curTaskID=-1;
 /*var client = net.connect(8888,'128.237.166.175',function(){
   console.log('Connected');
 });*/
-var HOST='localhost'; //Change this back to localhost
-var PORT=3000;
-//var HOST='128.237.221.1';
+//var HOST='localhost'; //Change this back to localhost
+var PORT=3001;
+var HOST='128.237.221.1';
 //var HOST='128.237.208.246';
 //handle send or receive failures and connection
-client.connect(PORT,HOST,function(){
-  console.log('Connected');
-});
-var io = require('socket.io').listen(app.listen(3000));
-client.on('data', function(data) {
-  console.log(data.toString());
-  io.emit('message', { message: data.toString() });
-});
-client.on('error',function(err){
-  console.log(err);
-  if(err.code == 'ECONNREFUSED'||'ECONNRESET'){
-    console.log("HERE");
-    client.setTimeout(1000,function(){
-      client.connect(PORT,HOST,function(){
-      });
-    });
-  }
-  setTimeout(setupConnection,10000);
-});
+// client.connect(PORT,HOST,function(){
+//   console.log('Connected');
+// });
+// var io = require('socket.io').listen(app.listen(3000));
+// client.on('data', function(data) {
+//   console.log(data.toString());
+//   io.emit('message', { message: data.toString() });
+// });
+// client.on('error',function(err){
+//   console.log(err);
+//   if(err.code == 'ECONNREFUSED'||'ECONNRESET'){
+//     console.log("HERE");
+//     client.setTimeout(1000,function(){
+//       client.connect(PORT,HOST,function(){
+//       });
+//     });
+//   }
+//   setTimeout(setupConnection,1000);
+// });
 app.use(express.static(__dirname+"/public"));
 app.set('views', './views');
 app.set('view engine', 'jade');
@@ -62,7 +62,7 @@ var disable="{\"type\" : \"request\",\"enableEvent\": false}";
 var caseConnect="{\"type\" : \"CaseConnected\"}";
 var objectplaced="{\"type\" : \"ObjectsPlaced\"}";
 var beginTask="{\"type\" : \"BeginTask\"}";
-io.on('connection', function (socket) {
+/*io.on('connection', function (socket) {
   console.log("CONNECTIONS");
   socket.on('enableJSON',function(){
     console.log("enable");
@@ -99,7 +99,7 @@ io.on('connection', function (socket) {
 
 
 
-});
+});*/
 /*function myIP(){ var vi="uses java to get the users local ip number"
     var yip2=java.net.InetAddress.getLocalHost();
     var yip=yip2.getHostAddress();
@@ -143,4 +143,5 @@ app.get('/armprep/', routes.armprep);
 app.get('/preactivity/', routes.preactivity);
 app.get('/activitystarted/', routes.activitystarted);
 app.get('/thanks/', routes.thanks);
-app.listen(3001) //changed this because of interference coming from somewhere...
+app.get('/studyend/', routes.studyend);
+app.listen(3001); //changed this because of interference coming from somewhere...
