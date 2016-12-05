@@ -1,7 +1,6 @@
 var express = require('express')
   , routes = require('./routes');
 var stormpath = require('express-stormpath');
-var MongoClient = require('mongodb').MongoClient;
 const Console = require('console').Console;
 var app = express();
 var http=require('http').Server(app);
@@ -38,14 +37,6 @@ client.on('error',function(err){
   setTimeout(setupConnection,1000);
 });
 
-// Mongo CONNECTIONS
-MongoClient.connect("mongodb://localhost:3001/exampleDB", function(err, db){
-    if (!err) {
-        logger.log("Connection to mongodb");
-    } else {
-        logger.log(err);
-    }
-})
 
 
 app.use(express.static(__dirname+"/public"));
