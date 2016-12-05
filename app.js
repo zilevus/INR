@@ -15,8 +15,8 @@ const logger = new Console(process.stdout, process.stderr);
   console.log('Connected');
 });*/
 //var HOST='localhost'; //Change this back to localhost
+var HOST='192.168.56.1'; //Change this back to localhost
 var PORT=3001;
-var HOST='192.168.56.1'; // change this to whatever computer is hosting
 client.connect(PORT,HOST,function(){
   console.log('Connected');
 });
@@ -25,6 +25,7 @@ client.on('data', function(data) {
   console.log(data.toString());
   io.emit('message', { message: data.toString() });
 });
+// attempts to reaqcuire the host if connection is not established
 client.on('error',function(err){
   console.log(err);
   if(err.code == 'ECONNREFUSED'||'ECONNRESET'){
@@ -66,7 +67,7 @@ var disable="{\"type\" : \"request\",\"enableEvent\": false}";
 var caseConnect="{\"type\" : \"CaseConnected\"}";
 var objectplaced="{\"type\" : \"ObjectsPlaced\"}";
 var beginTask="{\"type\" : \"BeginTask\"}";
-/*io.on('connection', function (socket) {
+io.on('connection', function (socket) {
   console.log("CONNECTIONS");
   socket.on('enableJSON',function(){
     console.log("enable");
@@ -103,7 +104,7 @@ var beginTask="{\"type\" : \"BeginTask\"}";
 
 
 
-});*/
+});
 /*function myIP(){ var vi="uses java to get the users local ip number"
     var yip2=java.net.InetAddress.getLocalHost();
     var yip=yip2.getHostAddress();

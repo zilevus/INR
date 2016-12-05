@@ -2,6 +2,8 @@ $(window).load(function() {
 	var loopNum = sessionStorage.getItem("loopNum");
 	var exerciseNum = sessionStorage.getItem("exerciseNum");
     // Thanks and then warns about induced error.
+    var retMsg = "{\"page\" : \"taskinit\", \"iteration\" : "+loopNum.toString()+"\"exercise\" : "+exerciseNum.toString()+ "}";
+    socket.emit("json", retMsg);
     if (loopNum == "3" || loopNum == "2") {
         $('#noticeContent').text("You will now repeat this activity with a different error");
     } else if (loopNum == "4"){
@@ -12,6 +14,7 @@ $(window).load(function() {
     } else {
         $('#noticeContent').text("You will now repeat this activity again");
     }
+
 	// Take the user to a survey, then renavigate
 	// back to the initial page
 	$('#start').on('click', function() {

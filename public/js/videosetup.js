@@ -4,6 +4,8 @@ $(window).load(function() {
 	// sets the initial exercise
 	var loopNum = sessionStorage.getItem("loopNum");
 	var exerciseNum = sessionStorage.getItem("exerciseNum");
+    var retMsg = "{\"page\" : \"taskinit\", \"iteration\" : "+loopNum.toString()+"\"exercise\" : "+exerciseNum.toString()+ "}";
+    socket.emit("json", retMsg);
 	// Because the first screen handles the getting of these variables in
 	// session storage we can reuse them anywhere throughout the application
 	$('#exerciseTitle').text = "Exercise " + exerciseNum.toString();
