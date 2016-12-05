@@ -1,3 +1,8 @@
+**IMPORTANT**
+As of MongoDB 2.2 the database does NOT support encryption, this means
+it CANNOT be used for this study.
+**IMPORTANT**
+
 Basic Modules
 -------------------------------------------------------------------------------
 The INR application uses NodeJS as its backbone. It is supported using the
