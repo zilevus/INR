@@ -13,28 +13,26 @@ var curTaskID=-1;
 });*/
 //var HOST='localhost'; //Change this back to localhost
 var PORT=3001;
-var HOST='128.237.221.1';
-//var HOST='128.237.208.246';
-//handle send or receive failures and connection
-// client.connect(PORT,HOST,function(){
-//   console.log('Connected');
-// });
-// var io = require('socket.io').listen(app.listen(3000));
-// client.on('data', function(data) {
-//   console.log(data.toString());
-//   io.emit('message', { message: data.toString() });
-// });
-// client.on('error',function(err){
-//   console.log(err);
-//   if(err.code == 'ECONNREFUSED'||'ECONNRESET'){
-//     console.log("HERE");
-//     client.setTimeout(1000,function(){
-//       client.connect(PORT,HOST,function(){
-//       });
-//     });
-//   }
-//   setTimeout(setupConnection,1000);
-// });
+var HOST='192.168.56.1'; // change this to whatever computer is hosting
+client.connect(PORT,HOST,function(){
+  console.log('Connected');
+});
+var io = require('socket.io').listen(app.listen(3001));
+client.on('data', function(data) {
+  console.log(data.toString());
+  io.emit('message', { message: data.toString() });
+});
+client.on('error',function(err){
+  console.log(err);
+  if(err.code == 'ECONNREFUSED'||'ECONNRESET'){
+    console.log("HERE");
+    client.setTimeout(1000,function(){
+      client.connect(PORT,HOST,function(){
+      });
+    });
+  }
+  setTimeout(setupConnection,1000);
+});
 app.use(express.static(__dirname+"/public"));
 app.set('views', './views');
 app.set('view engine', 'jade');
@@ -134,14 +132,5 @@ var query = connection.query(post, function(err, result) {
 //console.log(query.sql);
 console.log("worked"); // INSERT INTO posts SET `id` = 1, `title` = 'Hello MySQL'
 */
-app.get('/taskinit/', routes.taskinit);
-app.get('/tasksetup/', routes.tasksetup);
-app.get('/survey/', routes.survey);
-app.get('/home/', routes.home);
-app.get('/videosetup/', routes.videosetup);
-app.get('/armprep/', routes.armprep);
-app.get('/preactivity/', routes.preactivity);
-app.get('/activitystarted/', routes.activitystarted);
-app.get('/thanks/', routes.thanks);
-app.get('/studyend/', routes.studyend);
-app.listen(3001); //changed this because of interference coming from somewhere...
+
+//app.listen(3001); //changed this because of interference coming from somewhere...
