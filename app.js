@@ -1,12 +1,16 @@
 var express = require('express')
   , routes = require('./routes');
 var stormpath = require('express-stormpath');
+var MongoClient = require('mongodb').MongoClient;
+const Console = require('console').Console;
 var app = express();
 var http=require('http').Server(app);
 var socket = require('socket.io')(http);
 var net = require('net');
 var client=new net.Socket();
 var curTaskID=-1;
+// Creates a universal logger that shows up in the terminal
+const logger = new Console(process.stdout, process.stderr);
 //var ak='128.237.208.246';
 /*var client = net.connect(8888,'128.237.166.175',function(){
   console.log('Connected');
@@ -33,6 +37,17 @@ client.on('error',function(err){
   }
   setTimeout(setupConnection,1000);
 });
+
+// Mongo CONNECTIONS
+MongoClient.connect("mongodb://localhost:3001/exampleDB", function(err, db){
+    if (!err) {
+        logger.log("Connection to mongodb");
+    } else {
+        logger.log(err);
+    }
+})
+
+
 app.use(express.static(__dirname+"/public"));
 app.set('views', './views');
 app.set('view engine', 'jade');
@@ -118,7 +133,7 @@ connection.connect(function(err) {
   console.log('db_connection_err',err);
   return;
  }
-  console.log("HI"); 
+  console.log("HI");
 });
 var post  = "select * from TestTable";
 var query = connection.query(post, function(err, result) {
