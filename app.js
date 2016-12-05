@@ -118,7 +118,7 @@ connection.connect(function(err) {
   console.log('db_connection_err',err);
   return;
  }
-  console.log("HI");
+  console.log("HI"); 
 });
 var post  = "select * from TestTable";
 var query = connection.query(post, function(err, result) {
