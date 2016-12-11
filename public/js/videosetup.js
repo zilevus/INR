@@ -1,5 +1,5 @@
 $(window).load(function() {
-	//var socket = io();
+	var socket = io();
 	// session storage?
 	// sets the initial exercise
 	var loopNum = sessionStorage.getItem("loopNum");
@@ -7,7 +7,8 @@ $(window).load(function() {
     var dat = new Date();
     var fulltime = dat.toJSON();
     var retMsg = "{\"page\" : \"activitystarted\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+"}";
-	// Because the first screen handles the getting of these variables in
+    socket.emit("json", retMsg);
+    // Because the first screen handles the getting of these variables in
 	// session storage we can reuse them anywhere throughout the application
 	$('#exerciseTitle').text = "Exercise " + exerciseNum.toString();
     //#diagIMG(src="../img/icons-all/diagrams-ex1.png")

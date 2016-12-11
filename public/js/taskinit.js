@@ -1,5 +1,7 @@
+var socket = io();
+
 $(window).load(function() {
-	var socket = io();
+
 	// session storage?
 	// sets the initial exercise
 	var loopNum = sessionStorage.getItem("loopNum");
@@ -16,8 +18,10 @@ $(window).load(function() {
 	} // executes each cycle 4 times, two for the good runs, two for induced error.
     var dat = new Date();
     var fulltime = dat.toJSON();
-    var retMsg = "{\"page\" : \"activitystarted\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+"}";
-    socket.emit("json", retMsg);
+    var retMsg = "{\"page\" : \"taskinit\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+"}";
+    if (socket != null) {
+        socket.emit("json", retMsg);
+    }
 	// sets the exercise picture equal to necessary number
 	$('#objectsUsed').attr("src", "../img/empty/Ex"+exerciseNum.toString()+".png");
 

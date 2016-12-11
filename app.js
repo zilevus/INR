@@ -27,15 +27,21 @@ client.on('data', function(data) {
 });
 // attempts to reaqcuire the host if connection is not established
 client.on('error',function(err){
-  console.log(err);
+  //console.log(err);
   if(err.code == 'ECONNREFUSED'||'ECONNRESET'){
-    console.log("HERE");
-    client.setTimeout(1000,function(){
+    //console.log("HERE");
+    client.setTimeout(10000,function(){
       client.connect(PORT,HOST,function(){
       });
     });
   }
-  setTimeout(setupConnection,1000);
+  //setTimeout(setupConnection,10000);
+});
+
+client.on('disconnect', function(err) {
+    client.setTimeout(10000, function(){
+        client.connect(PORT, HOST, function(){});
+    });
 });
 
 
@@ -68,7 +74,7 @@ var caseConnect="{\"type\" : \"CaseConnected\"}";
 var objectplaced="{\"type\" : \"ObjectsPlaced\"}";
 var beginTask="{\"type\" : \"BeginTask\"}";
 io.on('connection', function (socket) {
-  console.log("CONNECTIONS");
+  //console.log("CONNECTIONS");
   socket.on('enableJSON',function(){
     console.log("enable");
     client.write(enable);
