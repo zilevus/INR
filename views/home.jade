@@ -1,12 +1,18 @@
 html
     head
         title=title
+        meta(name='apple-mobile-web-app-capable', content='yes')
         link(href='/css/style.css', rel='stylesheet')
+        script(src='/js/featuredisable.js')
         body(margin="auto")
             div.homecontainer
                 div.centered
                     span Welcome to the Movement Assessment Study. 
                     br
-                    a(href='/taskinit/')
-                        div#beginButton Begin
+                    div(onclick="move()")#beginButton Begin
                     span Press the green button above to begin.
+                    script.
+                        function move() {
+                            //window.location.href = '/tasksetup/'
+                            window.location.assign('/taskinit/')
+                        }

@@ -18,17 +18,22 @@ $(window).load(function() {
   if (userNum === null) {
     userNum = 1;
   }
+
+  var dat = new Date();
+  var fulltime = dat.toJSON();
+  var retMsg = "{\"page\" : \"survey\", \"access time\" : "+"\""+fulltime+"\", "+"\"exercise\" : "+"\""+exerciseNumSurvey.toString()+"\""+"}";
+  socket.emit("json", retMsg);
   $('#questionOne').empty();
   $('#questionTwo').empty();
   $('#questionThree').empty();
-  if (firstWrite === 'true') {
+  /*if (firstWrite === 'true') {
     var fir = "START OF PARTICIPANT " + userNum;
     socket.emit("json", fir);
     firstWrite = "false";
     sessionStorage.setItem("firstWrite", firstWrite);
   }
   var intro = "participant " + userNum.toString() + " exercise " + exerciseNumSurvey.toString();
-  socket.emit("json", intro);
+  socket.emit("json", intro);*/
 
 exerciseNumSurvey = parseInt(exerciseNumSurvey);
 var choices = [];

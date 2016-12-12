@@ -1,4 +1,5 @@
 $(window).load(function() {
+	var popup=document.getElementById("popupBoxOnePosition");
 	var socket = io();
 	// session storage?
 	// sets the initial exercise
@@ -6,7 +7,7 @@ $(window).load(function() {
 	var exerciseNum = sessionStorage.getItem("exerciseNum");
     var dat = new Date();
     var fulltime = dat.toJSON();
-    var retMsg = "{\"page\" : \"activitystarted\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+"}";
+    var retMsg = "{\"page\" : \"videosetup\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+"}";
     socket.emit("json", retMsg);
     // Because the first screen handles the getting of these variables in
 	// session storage we can reuse them anywhere throughout the application
@@ -14,7 +15,7 @@ $(window).load(function() {
     //#diagIMG(src="../img/icons-all/diagrams-ex1.png")
     $('#diagIMG').attr("src", "../img/icons-all/diagrams-ex"+exerciseNum.toString()+".png")
 	// sets the exercise picture equal to necessary number
-	$('#videoDiag').attr("src", "../img/movies/INR-Exercise"+exerciseNum.toString()+".MOV");
+	$('#videodiag').attr("src", "../img/movies/INR-Exercise"+exerciseNum.toString()+".MOV");
     $( '#video' ).on("tap", function() {
 		console.log("video.onclick");
 		var video = document.getElementById('videodiag');
