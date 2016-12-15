@@ -20,6 +20,14 @@ font-style: normal;
 	text-align: center;
 	z-index: 999;
 }
+
+#tg {
+	position: fixed;
+	margin-top: 40%;
+	left: 30%;
+	border: 2px solid black;
+}
+
 #noticeContent{
 	/*position: fixed;*/
 	margin-top: 7%;
