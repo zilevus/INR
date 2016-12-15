@@ -1,6 +1,6 @@
 $(window).load(function() {
     var socket = io();
-
+    var scoreresponse;
     	console.log("HERE first");
     	var taskLoad=false;
     	var socket=io();
@@ -10,15 +10,34 @@ $(window).load(function() {
     		console.log("HERE");
     		var html="";
     		if(data.message!=null){
-    			var obj=JSON.parse(data.message);
+    			scoreresponse=JSON.parse(data.message);
     			console.log(obj);
-    			alert(data.message);
+    			//alert(data.message);
     		}else{
     			console.log("Problem",data);
     		}
 
     	});
+      /*var scoreSets = ["speed", "placement", "task", "compensation", "drop", "path"];
+      for (var i = 1; i <=6; i++) {
+          var j = document.getElementById("tg-s"+i.toString());
+          var k = document.getElementById("tg-i"+i.toString());
+          j.innerHTML = scoreSets[i - 1];
+          k.innerHTML = scoreresponse.scoreSets;
+      }*/
       // speed, placement, task, compensation, drop, path
+      document.getElementById("tg-s1").innerHTML = "speed";
+      document.getElementById("tg-s2").innerHTML = "placement";
+      document.getElementById("tg-s3").innerHTML = "task";
+      document.getElementById("tg-s4").innerHTML = "compensation";
+      document.getElementById("tg-s5").innerHTML = "drop";
+      document.getElementById("tg-s6").innerHTML = "path";
+      document.getElementById("tg-i1").innerHTML = scoreresponse.speed;
+      document.getElementById("tg-i2").innerHTML = scoreresponse.placement;
+      document.getElementById("tg-i3").innerHTML = scoreresponse.task;
+      document.getElementById("tg-i4").innerHTML = scoreresponse.compensation;
+      document.getElementById("tg-i5").innerHTML = scoreresponse.drop;
+      document.getElementById("tg-i6").innerHTML = scoreresponse.path;
 
 
 	var loopNum = sessionStorage.getItem("loopNum");
