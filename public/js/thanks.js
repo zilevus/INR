@@ -10,7 +10,7 @@ $(window).load(function() {
     		var html="";
     		if(data.message!=null){
     			var scoreresponse=JSON.parse(data.message);
-          $('#noticeContent').text(scoreresponse.toString());
+          $('#noticeContent').text(scoreresponse.score1);
 
 
           console.log(scoreresponse);
