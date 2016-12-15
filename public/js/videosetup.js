@@ -13,7 +13,7 @@ $(window).load(function() {
       var html="";
       if(data.message!=null){
         var ready=JSON.parse(data.message);
-        alert(ready.toString());
+        console.log(ready);
 
         //console.log(obj);
         //alert(scoreresponse);
