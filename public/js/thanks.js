@@ -11,12 +11,12 @@ $(window).load(function() {
     		var html="";
     		if(data.message!=null){
     			var scoreresponse=JSON.parse(data.message);
-          var s1 = scoreresponse.score1.toString();
-          var s2 = scoreresponse.score2.toString();
-          var s3 = scoreresponse.score3.toString();
-          var s4 = scoreresponse.score4.toString();
-          var s5 = scoreresponse.score5.toString();
-          var s6 = scoreresponse.score6.toString();
+          var s1 = scoreresponse.score1;
+          var s2 = scoreresponse.score2;
+          var s3 = scoreresponse.score3;
+          var s4 = scoreresponse.score4;
+          var s5 = scoreresponse.score5;
+          var s6 = scoreresponse.score6;
 
           document.getElementById("tg-s1").innerHTML = "speed";
           document.getElementById("tg-s2").innerHTML = "placement";
@@ -24,12 +24,12 @@ $(window).load(function() {
           document.getElementById("tg-s4").innerHTML = "compensation";
           document.getElementById("tg-s5").innerHTML = "drop";
           document.getElementById("tg-s6").innerHTML = "path";
-          document.getElementById("tg-i1").innerHTML = s1;
-          document.getElementById("tg-i2").innerHTML = s2;
-          document.getElementById("tg-i3").innerHTML = s3;
-          document.getElementById("tg-i4").innerHTML = s4;
-          document.getElementById("tg-i5").innerHTML = s5;
-          document.getElementById("tg-i6").innerHTML = s6;
+          document.getElementById("tg-i1").innerHTML = scoreToValues(s1);
+          document.getElementById("tg-i2").innerHTML = scoreToValues(s2);
+          document.getElementById("tg-i3").innerHTML = scoreToValues(s3);
+          document.getElementById("tg-i4").innerHTML = scoreToValues(s4);
+          document.getElementById("tg-i5").innerHTML = scoreToValues(s5);
+          document.getElementById("tg-i6").innerHTML = scoreToValues(s6);
           //$("#prep").text(scoreresponse.toString());
           //$('#noticeContent').text(scoreresponse);
 
