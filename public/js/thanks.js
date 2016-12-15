@@ -32,12 +32,12 @@ $(window).load(function() {
       document.getElementById("tg-s4").innerHTML = "compensation";
       document.getElementById("tg-s5").innerHTML = "drop";
       document.getElementById("tg-s6").innerHTML = "path";
-      document.getElementById("tg-i1").innerHTML = scoreresponse.speed;
-      document.getElementById("tg-i2").innerHTML = scoreresponse.placement;
-      document.getElementById("tg-i3").innerHTML = scoreresponse.task;
-      document.getElementById("tg-i4").innerHTML = scoreresponse.compensation;
-      document.getElementById("tg-i5").innerHTML = scoreresponse.drop;
-      document.getElementById("tg-i6").innerHTML = scoreresponse.path;
+      document.getElementById("tg-i1").innerHTML = scoreresponse.score1;
+      document.getElementById("tg-i2").innerHTML = scoreresponse.score2;
+      document.getElementById("tg-i3").innerHTML = scoreresponse.score3;
+      document.getElementById("tg-i4").innerHTML = scoreresponse.score4;
+      document.getElementById("tg-i5").innerHTML = scoreresponse.score5;
+      document.getElementById("tg-i6").innerHTML = scoreresponse.score6;
 
 
 	var loopNum = sessionStorage.getItem("loopNum");
