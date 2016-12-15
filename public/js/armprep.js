@@ -6,6 +6,7 @@ $(window).load(function() {
       var html="";
       if(data.message!=null){
           var ready=JSON.parse(data.message);
+          console.log(ready.error1);
           if (ready.error1 == "1") {
               cont = true;
           } else if (ready.error1 == 1) {
