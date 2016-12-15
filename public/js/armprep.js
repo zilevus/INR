@@ -1,7 +1,8 @@
 var socket = io();
-$(window).load(function() {
-    function sendresponse() {
-        var systemReady="{\"type\" : \"SystemReady\",\"task\" : ";
-        socket.emit("json", systemReady);
-    };
+
+function sendresponse() {
+    var loopNum = sessionStorage.getItem("loopNum");
+    var exerciseNum = sessionStorage.getItem("exerciseNum");
+    var systemReady="{\"type\" : \"SystemReady\",\"task\" : " +exerciseNum.toString()+"}";
+    socket.emit("json", systemReady);
 }

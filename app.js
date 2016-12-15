@@ -15,7 +15,7 @@ const logger = new Console(process.stdout, process.stderr);
   console.log('Connected');
 });*/
 //var HOST='localhost'; //Change this back to localhost
-var HOST='192.168.56.1'; //Change this back to localhost
+var HOST='192.168.56.1'; //Change this to whomever is hosting
 var PORT=3001;
 client.connect(PORT,HOST,function(){
   console.log('Connected');
@@ -27,14 +27,14 @@ client.on('data', function(data) {
 });
 // attempts to reaqcuire the host if connection is not established
 client.on('error',function(err){
-  //console.log(err);
   if(err.code == 'ECONNREFUSED'||'ECONNRESET'){
-    //console.log("HERE");
+    // sets the timeout to 10 seconds
     client.setTimeout(10000,function(){
       client.connect(PORT,HOST,function(){
       });
     });
   }
+  // disabling this stops the socket from disconnecting for some reason
   //setTimeout(setupConnection,10000);
 });
 
@@ -43,8 +43,6 @@ client.on('disconnect', function(err) {
         client.connect(PORT, HOST, function(){});
     });
 });
-
-
 
 app.use(express.static(__dirname+"/public"));
 app.set('views', './views');

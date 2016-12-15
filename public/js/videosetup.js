@@ -7,7 +7,7 @@ $(window).load(function() {
 	var loopNum = sessionStorage.getItem("loopNum");
 	var exerciseNum = sessionStorage.getItem("exerciseNum");
     var taskSetupReq="{\"type\" : \"TaskSetup\",\"task\" : ";
-    socket.emit("json", taskSetupReq +exercise.toString()+"}")
+    socket.emit("json", taskSetupReq +exerciseNum.toString()+"}")
     var dat = new Date();
     var fulltime = dat.toJSON();
     var retMsg = "{\"page\" : \"videosetup\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+"}";
