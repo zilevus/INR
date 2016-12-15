@@ -24,12 +24,12 @@ $(window).load(function() {
           document.getElementById("tg-s4").innerHTML = "compensation";
           document.getElementById("tg-s5").innerHTML = "drop";
           document.getElementById("tg-s6").innerHTML = "path";
-          document.getElementById("tg-i1").innerHTML = scoreToValues(s1);
-          document.getElementById("tg-i2").innerHTML = scoreToValues(s2);
-          document.getElementById("tg-i3").innerHTML = scoreToValues(s3);
-          document.getElementById("tg-i4").innerHTML = scoreToValues(s4);
-          document.getElementById("tg-i5").innerHTML = scoreToValues(s5);
-          document.getElementById("tg-i6").innerHTML = scoreToValues(s6);
+          document.getElementById("tg-i1").innerHTML = scoreToValues(s1).response;
+          document.getElementById("tg-i2").innerHTML = scoreToValues(s2).response;
+          document.getElementById("tg-i3").innerHTML = scoreToValues(s3).response;
+          document.getElementById("tg-i4").innerHTML = scoreToValues(s4).response;
+          document.getElementById("tg-i5").innerHTML = scoreToValues(s5).response;
+          document.getElementById("tg-i6").innerHTML = scoreToValues(s6).response;
           //$("#prep").text(scoreresponse.toString());
           //$('#noticeContent').text(scoreresponse);
 
