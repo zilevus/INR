@@ -1,6 +1,5 @@
 $(window).load(function() {
     var socket = io();
-    var scoreresponse;
     	console.log("HERE first");
     	var taskLoad=false;
     	var socket=io();
@@ -10,7 +9,7 @@ $(window).load(function() {
     		console.log("HERE");
     		var html="";
     		if(data.message!=null){
-    			scoreresponse=JSON.parse(data.message);
+    			var scoreresponse=JSON.parse(data.message);
 
 
           console.log(scoreresponse);
@@ -28,8 +27,8 @@ $(window).load(function() {
   /*    document.getElementById("tg-s4").innerHTML = "compensation";
       document.getElementById("tg-s5").innerHTML = "drop";
       document.getElementById("tg-s6").innerHTML = "path";*/
-      //document.getElementById("tg-i1").innerHTML = scoreresponse["score1"].toString();
-      //document.getElementById("tg-i2").innerHTML = scoreresponse["score2"].toString();
+      document.getElementById("tg-i1").innerHTML = scoreresponse["score1"].toString();
+      document.getElementById("tg-i2").innerHTML = scoreresponse["score2"].toString();
       document.getElementById("tg-i3").innerHTML = scoreresponse["score3"].toString();
       function scoreToValues(score){
     		console.log("scoreToValues");
