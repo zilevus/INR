@@ -1,5 +1,26 @@
 $(window).load(function() {
     var socket = io();
+
+    	console.log("HERE first");
+    	var taskLoad=false;
+    	var socket=io();
+    	var taskname=document.getElementById("taskName");
+    	//socket.emit("endTask");
+    	socket.on('message',function(data){
+    		console.log("HERE");
+    		var html="";
+    		if(data.message!=null){
+    			var obj=JSON.parse(data.message);
+    			console.log(obj);
+    			alert(data.message);
+    		}else{
+    			console.log("Problem",data);
+    		}
+
+    	});
+      // speed, placement, task, compensation, drop, path
+
+
 	var loopNum = sessionStorage.getItem("loopNum");
 	var exerciseNum = sessionStorage.getItem("exerciseNum");
     // Thanks and then warns about induced error.

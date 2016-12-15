@@ -21,8 +21,8 @@ $(window).load(function() {
 
   var dat = new Date();
   var fulltime = dat.toJSON();
-  var retMsg = "{\"page\" : \"survey\", \"access time\" : "+"\""+fulltime+"\", "+"\"exercise\" : "+"\""+exerciseNumSurvey.toString()+"\""+"}";
-  socket.emit("json", retMsg);
+  //var retMsg = "{\"page\" : \"survey\", \"access time\" : "+"\""+fulltime+"\", "+"\"exercise\" : "+"\""+exerciseNumSurvey.toString()+"\""+"}";
+  //socket.emit("json", retMsg);
   $('#questionOne').empty();
   $('#questionTwo').empty();
   $('#questionThree').empty();
