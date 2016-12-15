@@ -19,7 +19,8 @@ $(window).load(function() {
           var s6 = scoreresponse.score6;
           var avg = Math.round((s1 + s2 + s3 + s4 + s5 + s6) / 6);
 
-          document.getElementById("tg-s1").innerHTML = "Your Score       ";
+
+          document.getElementById("tg-s1").innerHTML = "Debug Score :        ";
           document.getElementById("tg-i1").innerHTML = scoreToValues(avg).response;
           //$("#prep").text(scoreresponse.toString());
           //$('#noticeContent').text(scoreresponse);
