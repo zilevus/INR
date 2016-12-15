@@ -26,17 +26,24 @@ $(window).load(function() {
 		console.log("video.onclick");
 		var video = document.getElementById('videodiag');
         //video.webkitRequestFullscreen();
-		video.currentTime=0;
-		video.play();
-		popup.style.display="block";
-		$('#video').css('visibility', 'hidden');
+    setTimeout(function(){
+      video.currentTime=0;
+  		video.play();
+  		popup.style.display="block";
+  		$('#video').css('visibility', 'hidden');
+    }, 500);
+
 	})
 
+
 	$( '#exit' ).on("tap", function() {
-		$('#video').css('visibility', 'visible');
-		console.log("exit.onclick");
-		console.log("");
-		popup.style.display="none";
+    setTimeout(function(){
+      $('#video').css('visibility', 'visible');
+  		console.log("exit.onclick");
+  		console.log("");
+  		popup.style.display="none";
+    }, 500);
+
 	});
 
 });

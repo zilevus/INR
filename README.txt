@@ -19,6 +19,7 @@ We are using Jade as the templating engine for the rendering of HTML as it
 allows for fast prototyping, easy reusability, cleaner looking code and
 the integrating of javascript.
 
+
 Use of Socket.io
 -------------------------------------------------------------------------------
 Sockets are currently being used as the main source of communication between
@@ -26,6 +27,10 @@ the user and those monitoring the users interaction. Currently the sockets
 monitor the current page of the user, the exercise that is being performed,
 which iteration of the exercise is being performed, the time of day and any
 interaction with the page that the user inputs.
+
+HOST : The CV server maintained by Jin-Woo (the gigabit)
+PORT : 8888
+Local port is 3001.
 
 Use of NativeScript
 --------------------------------------------------------------------------------
@@ -36,6 +41,12 @@ The current understanding is that NativeScript will allow us to create new
 files on the iPad (Or other mobile device) filesystem which we will later be
 able to access. This is a feature that we are looking to get working soon as we
 would like to move towards a system that is not reliant on a network connection.
+
+We would like to implement this as soon as possible. Currently images and video
+are being hosted from the CV server and this is causing immense amounts of lag
+if we are able to keep these files client side using the NativeScript wrapper
+and storing them on the ipad, it should be much faster than if we are serving
+them from the server.
 
 
 Induced Errors for Patients
@@ -72,3 +83,6 @@ Adding a new screen is a six step process.
         full screen capability will be lost
             -- you will also risk a socket disconnect which can cause the
             terminal output to look a little buggy.
+
+        ** All communications back to the server have been disabled except for
+         the JSON that was requested by Jin-Woo hence, commented out**
