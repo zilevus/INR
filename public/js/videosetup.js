@@ -1,3 +1,4 @@
+var cont = false;
 $(window).load(function() {
     var socket = io();
 
@@ -9,19 +10,21 @@ $(window).load(function() {
     var taskSetupReq="{\"type\" : \"taskSetup\",\"task\" : ";
     socket.emit("json", taskSetupReq +exerciseNum.toString()+"}")
     socket.on('message',function(data){
-      console.log("HERE");
-      var html="";
-      if(data.message!=null){
-        var ready=JSON.parse(data.message);
-        console.log(ready);
-
-        //console.log(obj);
-        //alert(scoreresponse);
-      }else{
-        console.log("Problem",data);
-      }
+        console.log("HERE");
+        var html="";
+        if(data.message!=null){
+            var ready=JSON.parse(data.message);
+            if (ready.error1 == ready.error2 && ready.error2 == ready.error3 && ready.error3 == ready.error1 && ready.error1 == 1) {
+                cont = true;
+            }
+            //console.log(obj);
+            //alert(scoreresponse);
+        }else{
+            console.log("Problem",data);
+        }
 
     });
+
     var dat = new Date();
     var fulltime = dat.toJSON();
     //var retMsg = "{\"page\" : \"videosetup\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+"}";
@@ -51,3 +54,9 @@ $(window).load(function() {
 	});
 
 });
+
+function check() {
+  if (cont) {
+    window.location.assign('/armprep/')
+  }
+}
