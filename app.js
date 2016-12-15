@@ -28,8 +28,8 @@ client.on('data', function(data) {
 // attempts to reaqcuire the host if connection is not established
 client.on('error',function(err){
   if(err.code == 'ECONNREFUSED'||'ECONNRESET'){
-    // sets the timeout to 10 seconds
-    client.setTimeout(10000,function(){
+    // sets the timeout to 1 seconds
+    client.setTimeout(1000,function(){
       client.connect(PORT,HOST,function(){
       });
     });
@@ -39,8 +39,10 @@ client.on('error',function(err){
 });
 
 client.on('disconnect', function(err) {
-    client.setTimeout(10000, function(){
-        client.connect(PORT, HOST, function(){});
+    client.setTimeout(500, function(){
+        client.connect(PORT, HOST, function(){
+          logger.log("disconnected server retrying");
+        });
     });
 });
 
