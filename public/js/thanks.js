@@ -13,7 +13,7 @@ $(window).load(function() {
     			scoreresponse=JSON.parse(data.message);
           console.log(scoreresponse);
     			console.log(obj);
-    			//alert(data.message);
+    			alert(scoreresponse);
     		}else{
     			console.log("Problem",data);
     		}
