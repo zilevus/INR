@@ -7,6 +7,10 @@ it CANNOT be used for this study.
 https://github.com/mephan/INR.git
 
 
+Currently we do not implement a 'demo mode', every run is done as if the user
+is participating in a full study.
+
+
 Basic Modules
 -------------------------------------------------------------------------------
 The INR application uses NodeJS as its backbone. It is supported using the

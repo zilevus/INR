@@ -19,7 +19,7 @@ $(window).load(function() {
 	// session storage we can reuse them anywhere throughout the application
 	$('#exerciseTitle').text("Exercise " + exerciseNum.toString());
     //#diagIMG(src="../img/icons-all/diagrams-ex1.png")
-  $('#diagIMG').attr("src", "../img/icons-all/diagrams-ex"+exerciseNum.toString()+".png")
+  $('#diagIMG').attr("src", "../img/instructions/diagrams-ex"+exerciseNum.toString()+".png")
 	// sets the exercise picture equal to necessary number
 	$('#videodiag').attr("src", "../img/movies/INR-Exercise"+exerciseNum.toString()+".MOV");
     $( '#video' ).on("tap", function() {
