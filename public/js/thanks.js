@@ -28,9 +28,38 @@ $(window).load(function() {
   /*    document.getElementById("tg-s4").innerHTML = "compensation";
       document.getElementById("tg-s5").innerHTML = "drop";
       document.getElementById("tg-s6").innerHTML = "path";*/
-      document.getElementById("tg-i1").innerHTML = scoreresponse["score1"].toString();
-      document.getElementById("tg-i2").innerHTML = scoreresponse["score2"].toString();
+      //document.getElementById("tg-i1").innerHTML = scoreresponse["score1"].toString();
+      //document.getElementById("tg-i2").innerHTML = scoreresponse["score2"].toString();
       document.getElementById("tg-i3").innerHTML = scoreresponse["score3"].toString();
+      function scoreToValues(score){
+    		console.log("scoreToValues");
+    		var hex="";
+    		var response="";
+    		if(score==1){
+    			hex="#eddb72";
+    			response="Could improve";
+    		}else if(score==2){
+    			hex="#b3dd5f";
+    			response="That was OK";
+    		}else if(score==3){
+    			response="Nicely Done";
+    			hex="#55e5b5";
+    		}else if(score==4){
+    			response="Great Job";
+    			hex="#27b4f2";
+    		}else if(score==5){
+    			response="Excellent work";
+    			hex="#6b86db";
+    		}else {
+    			response="No score available";
+    			hex="#ffffff";
+    		}
+    		return {
+    			hex: hex,
+    			response: response
+    		};
+	}
+
     /*  document.getElementById("tg-i4").innerHTML = scoreresponse.score4;
       document.getElementById("tg-i5").innerHTML = scoreresponse.score5;
       document.getElementById("tg-i6").innerHTML = scoreresponse.score6;*/
