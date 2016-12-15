@@ -17,7 +17,7 @@ $(window).load(function() {
           var s4 = scoreresponse.score4;
           var s5 = scoreresponse.score5;
           var s6 = scoreresponse.score6;
-          var avg = (Integer.parseInt(s1) + Integer.parseInt(s2) + Integer.parseInt(s3) + Integer.parseInt(s4) + Integer.parseInt(s5) + Integer.praseInt(s6)) / 6;
+          var avg = (s1 + s2 + s3 + s4 + s5 + s6) / 6;
 
           document.getElementById("tg-s1").innerHTML = "Your Score    ";
           document.getElementById("tg-i1").innerHTML = scoreToValues(avg).response;
