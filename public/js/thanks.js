@@ -5,8 +5,8 @@ $(window).load(function() {
     // Thanks and then warns about induced error.
     var dat = new Date();
     var fulltime = dat.toJSON();
-    var retMsg = "{\"page\" : \"thanks\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+"}";
-    socket.emit("json", retMsg);
+    //var retMsg = "{\"page\" : \"thanks\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+"}";
+    //socket.emit("json", retMsg);
     if (loopNum == "3") {
         $('#noticeContent').text("You will now repeat this activity with a different error");
     } else if (loopNum == "2") {

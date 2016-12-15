@@ -22,6 +22,6 @@ function grabTime() {
     socket.emit("json", endTask);
     t1 = performance.now();
     var timeOn = t1 - t0;
-    var retMsg = "{\"page\" : \"activitystarted\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+ ", \"time spent\" : "+"\""+timeOn +"\""+ "}";
-    socket.emit("json", retMsg);
+    //var retMsg = "{\"page\" : \"activitystarted\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+ ", \"time spent\" : "+"\""+timeOn +"\""+ "}";
+    //socket.emit("json", retMsg);
 }

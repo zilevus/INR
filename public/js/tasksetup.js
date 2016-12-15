@@ -12,8 +12,8 @@ $(window).load(function() {
 	// session storage we can reuse them anywhere throughout the application
     var dat = new Date();
     var fulltime = dat.toJSON();
-    var retMsg = "{\"page\" : \"tasksetup\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+"}";
-        io().emit("json", retMsg);
+    //var retMsg = "{\"page\" : \"tasksetup\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+"}";
+    //    io().emit("json", retMsg);
     // sets the exercise picture equal to necessary number
 	$('#firstSetup').attr("src", "../img/startingpos/diagrams-start"+exerciseNum.toString()+".png");
 

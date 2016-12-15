@@ -10,8 +10,8 @@ $(window).load(function() {
     socket.emit("json", taskSetupReq +exerciseNum.toString()+"}")
     var dat = new Date();
     var fulltime = dat.toJSON();
-    var retMsg = "{\"page\" : \"videosetup\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+"}";
-    socket.emit("json", retMsg);
+    //var retMsg = "{\"page\" : \"videosetup\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+"}";
+    //socket.emit("json", retMsg);
     // Because the first screen handles the getting of these variables in
 	// session storage we can reuse them anywhere throughout the application
 	$('#exerciseTitle').text = "Exercise " + exerciseNum.toString();
