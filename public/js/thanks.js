@@ -4,7 +4,8 @@ $(window).load(function() {
     	var taskLoad=false;
     	var socket=io();
     	var taskname=document.getElementById("taskName");
-    	//socket.emit("endTask");
+      var endTask="{\"type\" : \"endTask\"}";
+      socket.emit("json", endTask);
     	socket.on('message',function(data){
     		console.log("HERE");
     		var html="";
