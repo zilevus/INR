@@ -8,6 +8,20 @@ $(window).load(function() {
 	var exerciseNum = sessionStorage.getItem("exerciseNum");
     var taskSetupReq="{\"type\" : \"taskSetup\",\"task\" : ";
     socket.emit("json", taskSetupReq +exerciseNum.toString()+"}")
+    socket.on('message',function(data){
+      console.log("HERE");
+      var html="";
+      if(data.message!=null){
+        var ready=JSON.parse(data.message);
+        alert(ready.toString());
+
+        //console.log(obj);
+        //alert(scoreresponse);
+      }else{
+        console.log("Problem",data);
+      }
+
+    });
     var dat = new Date();
     var fulltime = dat.toJSON();
     //var retMsg = "{\"page\" : \"videosetup\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+"}";
@@ -16,7 +30,7 @@ $(window).load(function() {
 	// session storage we can reuse them anywhere throughout the application
 	$('#exerciseTitle').text = "Exercise " + exerciseNum.toString();
     //#diagIMG(src="../img/icons-all/diagrams-ex1.png")
-    $('#diagIMG').attr("src", "../img/icons-all/diagrams-ex"+exerciseNum.toString()+".png")
+  $('#diagIMG').attr("src", "../img/icons-all/diagrams-ex"+exerciseNum.toString()+".png")
 	// sets the exercise picture equal to necessary number
 	$('#videodiag').attr("src", "../img/movies/INR-Exercise"+exerciseNum.toString()+".MOV");
     $( '#video' ).on("tap", function() {
