@@ -17,9 +17,9 @@ $(window).load(function() {
           var s4 = scoreresponse.score4;
           var s5 = scoreresponse.score5;
           var s6 = scoreresponse.score6;
-          var avg = (s1 + s2 + s3 + s4 + s5 + s6) / 6;
+          var avg = Math.round((s1 + s2 + s3 + s4 + s5 + s6) / 6);
 
-          document.getElementById("tg-s1").innerHTML = "Your Score    ";
+          document.getElementById("tg-s1").innerHTML = "Your Score       ";
           document.getElementById("tg-i1").innerHTML = scoreToValues(avg).response;
           //$("#prep").text(scoreresponse.toString());
           //$('#noticeContent').text(scoreresponse);
@@ -33,7 +33,7 @@ $(window).load(function() {
     		}
 
     	});
-
+      // for the error runs we want to only display feedback for the incorrect run, not total
       function scoreToValues(score){
     		console.log("scoreToValues");
     		var hex="";
