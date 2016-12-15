@@ -29,7 +29,8 @@ $(window).load(function() {
           document.getElementById("tg-i4").innerHTML = s4;
           document.getElementById("tg-i5").innerHTML = s5;
           document.getElementById("tg-i6").innerHTML = s6;*/
-          $("#prep").text(scoreresponse.toString());
+          //$("#prep").text(scoreresponse.toString());
+          $('#noticeContent').text("You will now repeat this activity with a different error");
 
 
           console.log(scoreresponse);
@@ -90,7 +91,7 @@ $(window).load(function() {
     var fulltime = dat.toJSON();
     //var retMsg = "{\"page\" : \"thanks\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+"}";
     //socket.emit("json", retMsg);
-    if (loopNum == "3") {
+    /*if (loopNum == "3") {
         $('#noticeContent').text("You will now repeat this activity with a different error");
     } else if (loopNum == "2") {
         $('#noticeContent').text("You will now repeat this activity with an induced error");
@@ -102,7 +103,7 @@ $(window).load(function() {
             window.location.assign('/survey');}, 3000);
     } else {
         $('#noticeContent').text("You will now repeat this activity again");
-    }
+    }*/
 
 	// Take the user to a survey, then renavigate
 	// back to the initial page
