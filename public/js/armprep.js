@@ -1,8 +1,15 @@
 var socket = io();
+var loopNum = sessionStorage.getItem("loopNum");
+var exerciseNum = sessionStorage.getItem("exerciseNum");
+$(window).load(function() {
+  var taskSetupReq="{\"type\" : \"taskSetup\",\"task\" : " + exerciseNum.toString() "}";
+  while(1) {
+    socket.emit("json", taskSetupReq);
+  }
+});
 function sendresponse() {
     var cont = false;
-    var loopNum = sessionStorage.getItem("loopNum");
-    var exerciseNum = sessionStorage.getItem("exerciseNum");
+
     socket.on('message',function(data){
         console.log("HERE");
         var html="";
