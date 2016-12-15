@@ -17,19 +17,10 @@ $(window).load(function() {
           var s4 = scoreresponse.score4;
           var s5 = scoreresponse.score5;
           var s6 = scoreresponse.score6;
+          var avg = (Integer.parseInt(s1) + Integer.parseInt(s2) + Integer.parseInt(s3) + Integer.parseInt(s4) + Integer.parseInt(s5) + Integer.praseInt(s6)) / 6;
 
-          document.getElementById("tg-s1").innerHTML = "speed";
-          document.getElementById("tg-s2").innerHTML = "placement";
-          document.getElementById("tg-s3").innerHTML = "task";
-          document.getElementById("tg-s4").innerHTML = "compensation";
-          document.getElementById("tg-s5").innerHTML = "drop";
-          document.getElementById("tg-s6").innerHTML = "path";
-          document.getElementById("tg-i1").innerHTML = scoreToValues(s1).response;
-          document.getElementById("tg-i2").innerHTML = scoreToValues(s2).response;
-          document.getElementById("tg-i3").innerHTML = scoreToValues(s3).response;
-          document.getElementById("tg-i4").innerHTML = scoreToValues(s4).response;
-          document.getElementById("tg-i5").innerHTML = scoreToValues(s5).response;
-          document.getElementById("tg-i6").innerHTML = scoreToValues(s6).response;
+          document.getElementById("tg-s1").innerHTML = "Your Score    ";
+          document.getElementById("tg-i1").innerHTML = scoreToValues(avg).response;
           //$("#prep").text(scoreresponse.toString());
           //$('#noticeContent').text(scoreresponse);
 
