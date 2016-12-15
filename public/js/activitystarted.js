@@ -18,6 +18,8 @@ $(window).load(function() {
 	sessionStorage.setItem("loopNum", loopNum.toString());
 });
 function grabTime() {
+    var endTask="{\"type\" : \"endTask\"}";
+    socket.emit("json", endTask);
     t1 = performance.now();
     var timeOn = t1 - t0;
     var retMsg = "{\"page\" : \"activitystarted\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+ ", \"time spent\" : "+"\""+timeOn +"\""+ "}";

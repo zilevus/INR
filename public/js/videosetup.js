@@ -1,10 +1,13 @@
 $(window).load(function() {
+    var socket = io();
+
 	var popup=document.getElementById("popupBoxOnePosition");
-	var socket = io();
 	// session storage?
 	// sets the initial exercise
 	var loopNum = sessionStorage.getItem("loopNum");
 	var exerciseNum = sessionStorage.getItem("exerciseNum");
+    var taskSetupReq="{\"type\" : \"TaskSetup\",\"task\" : ";
+    socket.emit("json", taskSetupReq +exercise.toString()+"}")
     var dat = new Date();
     var fulltime = dat.toJSON();
     var retMsg = "{\"page\" : \"videosetup\", \"access time\" : "+"\""+fulltime+"\""+ ", \"iteration\" : "+"\""+loopNum.toString()+"\""+"\"exercise\" : "+"\""+exerciseNum.toString()+"\""+"}";
