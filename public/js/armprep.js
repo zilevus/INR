@@ -16,9 +16,13 @@ function sendresponse() {
         if(data.message!=null){
             var ready=JSON.parse(data.message);
             if (ready.error1 == "1") {
-                cont = true;
+              var systemReady="{\"type\" : \"SystemReady\",\"task\" : " +exerciseNum.toString()+"}";
+              socket.emit("json", systemReady);
+              window.location.assign('/preactivity/')
             } else if (ready.error1 == 1) {
-              cont = true;
+              var systemReady="{\"type\" : \"SystemReady\",\"task\" : " +exerciseNum.toString()+"}";
+              socket.emit("json", systemReady);
+              window.location.assign('/preactivity/')
             }
             //console.log(obj);
             //alert(scoreresponse);
@@ -27,9 +31,4 @@ function sendresponse() {
         }
 
     });
-    if (cont) {
-      var systemReady="{\"type\" : \"SystemReady\",\"task\" : " +exerciseNum.toString()+"}";
-      socket.emit("json", systemReady);
-      window.location.assign('/preactivity/')
-    }
 }
