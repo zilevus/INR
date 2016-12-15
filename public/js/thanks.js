@@ -11,6 +11,7 @@ $(window).load(function() {
     		var html="";
     		if(data.message!=null){
     			scoreresponse=JSON.parse(data.message);
+          console.log(scoreresponse);
     			console.log(obj);
     			//alert(data.message);
     		}else{
