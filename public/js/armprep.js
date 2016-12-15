@@ -6,8 +6,10 @@ $(window).load(function() {
       var html="";
       if(data.message!=null){
           var ready=JSON.parse(data.message);
-          if (ready.error1 == ready.error2 && ready.error2 == ready.error3 && ready.error3 == ready.error1 && ready.error1 == 1) {
+          if (ready.error1 == "1") {
               cont = true;
+          } else if (ready.error1 == 1) {
+            cont = true;
           }
           //console.log(obj);
           //alert(scoreresponse);
