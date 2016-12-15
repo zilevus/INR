@@ -23,7 +23,7 @@ $(window).load(function() {
           document.getElementById("tg-s4").innerHTML = "compensation";
           document.getElementById("tg-s5").innerHTML = "drop";
           document.getElementById("tg-s6").innerHTML = "path";
-          document.getElementById("tg-i1").innerHTML = "WHY ARENT YOU WORKING";
+          document.getElementById("tg-i1").innerHTML = s1;
           document.getElementById("tg-i2").innerHTML = s2;
           document.getElementById("tg-i3").innerHTML = s3;
           document.getElementById("tg-i4").innerHTML = s4;
