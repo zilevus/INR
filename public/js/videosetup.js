@@ -9,7 +9,7 @@ $(window).load(function() {
 	var exerciseNum = sessionStorage.getItem("exerciseNum");
     var taskSetupReq="{\"type\" : \"taskSetup\",\"task\" : ";
     socket.emit("json", taskSetupReq +exerciseNum.toString()+"}")
-    
+
 
     var dat = new Date();
     var fulltime = dat.toJSON();
@@ -17,7 +17,7 @@ $(window).load(function() {
     //socket.emit("json", retMsg);
     // Because the first screen handles the getting of these variables in
 	// session storage we can reuse them anywhere throughout the application
-	$('#exerciseTitle').text = "Exercise " + exerciseNum.toString();
+	$('#exerciseTitle').text("Exercise " + exerciseNum.toString());
     //#diagIMG(src="../img/icons-all/diagrams-ex1.png")
   $('#diagIMG').attr("src", "../img/icons-all/diagrams-ex"+exerciseNum.toString()+".png")
 	// sets the exercise picture equal to necessary number
