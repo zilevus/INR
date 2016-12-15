@@ -31,7 +31,7 @@ $(window).load(function() {
           document.getElementById("tg-i5").innerHTML = s5;
           document.getElementById("tg-i6").innerHTML = s6;*/
           //$("#prep").text(scoreresponse.toString());
-          $('#noticeContent').text("You will now repeat this activity with a different error");
+          $('#noticeContent').text(scoreresponse);
 
 
           console.log(scoreresponse);
