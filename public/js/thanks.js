@@ -11,18 +11,7 @@ $(window).load(function() {
     		var html="";
     		if(data.message!=null){
     			scoreresponse=JSON.parse(data.message);
-          document.getElementById("tg-s1").innerHTML = "speed";
-          document.getElementById("tg-s2").innerHTML = "placement";
-          document.getElementById("tg-s3").innerHTML = "task";
-          document.getElementById("tg-s4").innerHTML = "compensation";
-          document.getElementById("tg-s5").innerHTML = "drop";
-          document.getElementById("tg-s6").innerHTML = "path";
-          document.getElementById("tg-i1").innerHTML = scoreresponse.score1;
-          document.getElementById("tg-i2").innerHTML = scoreresponse.score2;
-          document.getElementById("tg-i3").innerHTML = scoreresponse.score3;
-          document.getElementById("tg-i4").innerHTML = scoreresponse.score4;
-          document.getElementById("tg-i5").innerHTML = scoreresponse.score5;
-          document.getElementById("tg-i6").innerHTML = scoreresponse.score6;
+
 
           console.log(scoreresponse);
     			//console.log(obj);
@@ -32,6 +21,19 @@ $(window).load(function() {
     		}
 
     	});
+
+      document.getElementById("tg-s1").innerHTML = "speed";
+      document.getElementById("tg-s2").innerHTML = "placement";
+      document.getElementById("tg-s3").innerHTML = "task";
+  /*    document.getElementById("tg-s4").innerHTML = "compensation";
+      document.getElementById("tg-s5").innerHTML = "drop";
+      document.getElementById("tg-s6").innerHTML = "path";*/
+      document.getElementById("tg-i1").innerHTML = scoreresponse["score1"].toString();
+      document.getElementById("tg-i2").innerHTML = scoreresponse["score2"].toString();
+      document.getElementById("tg-i3").innerHTML = scoreresponse["score3"].toString();
+    /*  document.getElementById("tg-i4").innerHTML = scoreresponse.score4;
+      document.getElementById("tg-i5").innerHTML = scoreresponse.score5;
+      document.getElementById("tg-i6").innerHTML = scoreresponse.score6;*/
       /*var scoreSets = ["speed", "placement", "task", "compensation", "drop", "path"];
       for (var i = 1; i <=6; i++) {
           var j = document.getElementById("tg-s"+i.toString());
