@@ -6,7 +6,7 @@ $(window).load(function() {
 	// sets the initial exercise
 	var loopNum = sessionStorage.getItem("loopNum");
 	var exerciseNum = sessionStorage.getItem("exerciseNum");
-    var taskSetupReq="{\"type\" : \"TaskSetup\",\"task\" : ";
+    var taskSetupReq="{\"type\" : \"taskSetup\",\"task\" : ";
     socket.emit("json", taskSetupReq +exerciseNum.toString()+"}")
     var dat = new Date();
     var fulltime = dat.toJSON();
