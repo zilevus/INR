@@ -117,7 +117,7 @@ $('.questionDivs').on("tap", function() {
 console.log(event.target.id);
 var output = $('#'+event.target.id).text();
 var ques1 = "Exercise " + exerciseNumSurvey + " most closely reminded of " + output.toString();
-socket.emit("json", ques1);
+//socket.emit("json", ques1);
 console.log(output);
 var second = [];
 for (i in choices) {
@@ -166,7 +166,7 @@ clickOne++;}, 400);
 else if (clickOne == 2){
   var output = $('#'+event.target.id).text();
   var ques2 = "participant " + userNum.toString() + " will be demonstrating " + output.toString();
-  socket.emit("json", ques2);
+  //socket.emit("json", ques2);
   $('#topMessage').text("Place the object(s) on the mat to setup the activity you would like to perform.");
   $('#questionOne').css('visibility', 'hidden');
   $('#questionTwo').css('visibility', 'hidden');
@@ -196,7 +196,7 @@ $(document).on("tap", function() {
     var d = new Date();
     var n = d.getTime();
     var timeStamp = "Starting activity... current system time " + n.toString();
-    socket.emit("json", timeStamp);
+    //socket.emit("json", timeStamp);
     $('#topMessage').css('color', 'white');
     $('#whole').css('background-color', 'red');
     continueTrue = false;
