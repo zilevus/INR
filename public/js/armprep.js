@@ -1,10 +1,6 @@
 var socket = io();
 var loopNum = sessionStorage.getItem("loopNum");
 var exerciseNum = sessionStorage.getItem("exerciseNum");
-//$(window).load(function() {
-  //while(1) {
-  //}
-//})
 
 function sendresponse() {
     var cont = false;
@@ -31,4 +27,5 @@ function sendresponse() {
         }
 
     });
+
 }
