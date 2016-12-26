@@ -20,8 +20,12 @@ $(window).load(function() {
           var avg = Math.round((s1 + s2 + s3 + s4 + s5 + s6) / 6);
 
 
-          document.getElementById("tg-s1").innerHTML = "Debug Score :        ";
-          document.getElementById("tg-i1").innerHTML = scoreToValues(avg).response;
+          // Returns the success message on how the patient did and sets
+          // the background color accordingly.
+          var retVal = scoreToValues(avg);
+          $("#scoreContent").text("Debug score:    " + retVal.response);
+          $("#scoreContentDiv").css("background-color", retVal.hex);
+
           //$("#prep").text(scoreresponse.toString());
           //$('#noticeContent').text(scoreresponse);
 

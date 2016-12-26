@@ -18,7 +18,7 @@ font-style: normal;
     right: 15%;
 	top: 35%;
 	text-align: center;
-	z-index: 999;
+	z-index: 900;
 }
 
 #tg {
@@ -31,6 +31,28 @@ font-style: normal;
 #noticeContent{
 	/*position: fixed;*/
 	margin-top: 7%;
+	left: 12%;
+	width: 85%;
+	font-size: 40px;
+	font-weight: 700;
+	text-align: center;
+	color: #59595B;
+	font-family:"Monserat";
+	z-index: 999;
+}
+
+#scoreContentDiv{
+	position: fixed;
+    left: 60%;
+	top: 70%;
+	text-align: center;
+	width: 95px;
+	height: 60px;
+	z-index: 999;
+}
+#scoreContent{
+	/*position: fixed;*/
+	margin-top: 14%;
 	left: 12%;
 	width: 85%;
 	font-size: 40px;

@@ -1,14 +1,33 @@
-**IMPORTANT**
-As of MongoDB 2.2 the database does NOT support encryption, this means
-it CANNOT be used for this study.
-**IMPORTANT**
-
 **GITHUB REPOSITORY**
 https://github.com/mephan/INR.git
 
 
 Currently we do not implement a 'demo mode', every run is done as if the user
 is participating in a full study.
+
+Running the application is as easy as tapping on its icon.
+
+** Important things to keep in mind **
+Back buttons have been disabled and full screen has been forced. Double tapping
+still causes a zoom affect which has not been disabled. If for any reason the
+user exits the application through the home button, the ipad sleeping or the
+power button. They will be required to start over as the local storage used
+for running the application will reset. This is important as they cannot switch
+between the application and another app without having the start over. Each
+new user will need to access the application from the ipad main screen for
+consistency.
+
+Should the application icon get deleted the following steps will restore it.
+  1. Run the server (bash-4.2 ~$ node app.js) in the directory of the
+      application.
+  2. Open safari on the iPad.
+  3. Type in the IP address of the server, followed by ':3001' into the address
+      bar of the safari window.
+          3.5. The IP of the server can be found by typing (bash-4.2~$ ifconfig)
+                on a linux machine and (cmd> ipconfig)
+  4. Click on the square icon with arrow pointing out (should be upper right corner)
+  5. Tap the 'add to homescreen' option
+  6. Name it - and launch it as normal.
 
 
 Basic Modules
@@ -32,9 +51,9 @@ monitor the current page of the user, the exercise that is being performed,
 which iteration of the exercise is being performed, the time of day and any
 interaction with the page that the user inputs.
 
-HOST : The CV server maintained by Jin-Woo (the gigabit)
+HOST : The CV server maintained by Jin-Woo (the gigabyte)
 PORT : 8888
-Local port is 3001.
+Local port is 3001
 
 Use of NativeScript
 --------------------------------------------------------------------------------
@@ -57,7 +76,7 @@ Induced Errors for Patients
 --------------------------------------------------------------------------------
 Currently we are undergoing a period where we would like the users to perform
 certain induced errors to help us train the system. In order to do this we are
-instructing them to peform certain errors. The application - upon loadup -
+instructing them to perform certain errors. The application - upon startup -
 currently attempts to read a file from the serving computer, parses it, and
 loads it into session storage as a JSON string where it can later be parsed
 back into JSON and accessed as an array to be used for errors.
@@ -65,6 +84,11 @@ back into JSON and accessed as an array to be used for errors.
 The idea behind this is that the serving computer supplies a file with a new
 induced error on each line, and that they are in the order that we would like
 them to appear during application runtime.
+
+** This is contained in the readfileforerrors.js file **
+
+Scoring is currently done as an average of all scores returned, and converted
+into a text string that can be read by the patient. 
 
 
 Instructions for Convenience --
@@ -89,4 +113,10 @@ Adding a new screen is a six step process.
             terminal output to look a little buggy.
 
         ** All communications back to the server have been disabled except for
-         the JSON that was requested by Jin-Woo hence, commented out**
+         the JSON that was requested by Jin-Woo hence, commented out, all stubs
+         contain the screen being accessed, the time of access and any
+         additional information that may be necessary. Currently the parser
+         used on the gigabyte will fault if it attempts to parse anything
+         that is not the responses being sent to it in the current version
+         of the code, move to change the parser if it proves useful to pass
+         back further information. **

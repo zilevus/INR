@@ -2,6 +2,7 @@
 html
     head
         title=title
+        meta(name='viewport', content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;')
         link(href='/css/style.css', rel='stylesheet')
         link(href='/css/circle.css', rel='stylesheet')
         script(src='/socket.io/socket.io.js')
@@ -16,16 +17,13 @@ html
             p#headerContent Thank You!
         div.notice
             p#noticeContent
+            p#scoreContent 
+        div#scoreContentDiv
         body(margin="auto")
             div#centeredPatient
                 div#thankingArea
                     div.centered
-                        span#prep 
-                        table#tg
-                            tr
-                                th#tg-s1
-                                th#tg-i1
-
+                        span#prep
 
             div(onclick="move()")#start
                 div.centered
