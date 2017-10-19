@@ -1,9 +1,14 @@
 @font-face{
-font-family: "Monserat";
-src: url("/fonts/montserrat/Montserrat-Bold.ttf");
+font-family: 'Verdana', sans-serif;
+//src: url("/fonts/montserrat/Montserrat-Bold.ttf");
+
 font-weight: bold;
 font-style: normal;
 }
+
+
+
+
 .head{
 	position: fixed;
 	top: 0;
@@ -12,10 +17,14 @@ font-style: normal;
 	background-color: #c0c0c0;
 	z-index: 11;
 }
-
+.centerScreen{
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
 .notice{
 	position: fixed;
-    right: 15%;
+  right: 15%;
 	top: 35%;
 	text-align: center;
 	z-index: 900;
@@ -74,9 +83,10 @@ span{
 	color: #59595B;
 	font-family:"Monserat";
 }
-
+/*this handles the background color*/
 html{
 background-color:  #c0c0c0;
+
 }
 
 #repetitions{
@@ -199,7 +209,7 @@ font-size:42pt;
 }
 
 #tasktext{
-font-size:90pt;
+font-size:60pt;
 }
 
 #backtest{
@@ -266,10 +276,29 @@ margin-bottom:auto;
 text-align:center;
 display:table;
 color:white;
+
+
 }
 
+#goBack{
+background-color: CC0033;
+height:100%;
+width:15%;
+float:left;
+margin-top:auto;
+margin-bottom:auto;
+text-align:center;
+display:table;
+color:white;
+position: absolute;
+left: 0px;
+width: 100px;
+}
+
+
+
 .centered{
-font-family:"Monserat";
+font-family:'Monserat',serif;
 vertical-align:middle;
 display:table-cell;
 font-size:36pt;
@@ -398,6 +427,11 @@ margin:auto;
 }
 
 #objectsUsed{
+display:block;
+margin:auto;
+}
+
+#newobjectsUsed{
 display:block;
 margin:auto;
 }

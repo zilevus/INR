@@ -2,18 +2,40 @@ html
     head
         title=title
         meta(name='viewport', content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;')
-        meta(name='apple-mobile-web-app-capable', content='yes')
         link(href='/css/style.css', rel='stylesheet')
+        link(href='/css/circle.css', rel='stylesheet')
+        script(src='/socket.io/socket.io.js')
+        meta(name='apple-mobile-web-app-capable', content='yes')
+        script(src='http://code.jquery.com/jquery-1.11.3.min.js')
+        script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
         script(src='/js/featuredisable.js')
+        //script(src='/js/papaparse.js');
+        script(type='text/javascript')
+        script(src='/js/workspace.js')
+        div.head
+            p#headerContent
+        div.notice
+            //p#noticeContent
         body(margin="auto")
-            div.homecontainer
-                div.centered
-                    span Welcome to the Movement Assessment Study. 
-                    br
-                    div(onclick="move()")#beginButton Begin
-                    span Press the green button above to begin.
-                    script.
-                        function move() {
-                            //window.location.href = '/tasksetup/'
-                            window.location.assign('/taskinit/')
-                        }
+            div#centeredPatient
+                div#objectSetup
+                        span#SetupText <p style="font-family:sans-serif;text-align:middle; font-size:70px; font-weight:bold;">Welcome! </p>
+                        br
+                        br
+                        br
+                        br
+                        br
+                        br
+                        <p style="font-family:sans-serif;text-align:middle;font-size:30px;">Please press anywhere on the green area to move forward. </p>
+                        //span Please press anywhere on the green area to move forward.
+
+        div(onclick="move()")#start
+            div.centered
+                div.forward
+                    img(src="../img/icons-all/forward.png")
+
+
+        script.
+            function move() {
+                window.location.assign('/workspace/')
+            }

@@ -125,15 +125,16 @@ for (i in choices) {
     second.push(choices[i]);
   }
 }
+
 console.log(second);
 $('.surveyMessage').empty();
 $('#topMessage').empty();
 $('#Q1').css('visibility', 'hidden');
-$('#topMessage').append("Consider how you might use the object(s) on the mat to act out any of the following activities:");
+//$('#topMessage').append("Consider how you might use the object(s) on the mat to act out any of the following activities:");
 // Set this timeout to avoid double tapping the first options
 setTimeout(function(){
-$('#questionOne').css('visibility', 'visible');
-$('#questionTwo').css('visibility', 'visible');
+//$('#questionOne').css('visibility', 'visible');
+//$('#questionTwo').css('visibility', 'visible');
 
 $('#questionOne').text(second[0]);
 $('#questionOne').css('color', 'black');
@@ -148,7 +149,7 @@ $('#questionTwo').css('font-size', '25px');
 
 $('#questionThree').css('visibility', 'visible');
 $('#questionThree').empty();
-$('#questionThree').append("Select one of the activities above to perform.");
+//$('#questionThree').append("Select one of the activities above to perform.");
 $('#questionThree').css('color', 'red');
 $('#questionThree').css('font-weight', '700');
 $('#questionThree').css('font-size', '30px');
@@ -161,9 +162,12 @@ $('#questionTwo').css('border-radius', '3px');
 
 
 clickOne++;}, 400);
+
+
 }
 
-else if (clickOne == 2){
+
+/*(else if (clickOne == 2){
   var output = $('#'+event.target.id).text();
   var ques2 = "participant " + userNum.toString() + " will be demonstrating " + output.toString();
   //socket.emit("json", ques2);
@@ -173,7 +177,10 @@ else if (clickOne == 2){
   $('#questionThree').css('visibility', 'hidden');
   //clickOne++;
   selected = true;
-}
+}*/
+selected = true;
+continueTrue = true;
+
 
 
 });
@@ -181,17 +188,19 @@ else if (clickOne == 2){
 $(document).on("tap", function() {
   console.log(clickOne);
   if (selected || continueTrue) {
+
     clickOne++;
   }
-  if (clickOne == 4 && selected) {
+
+/*  if (clickOne == 4 && selected) {
     $('#topMessage').text("Sit with your back against the chair. Place your right arm in the start position. Press the green button to continue.");
     setTimeout(function(){
     $('#continue').css('visibility', 'visible');}, 500);
     selected = false;
     //clickOne++;
-  }
+  }*/
 
-  if (clickOne == 6 && continueTrue) {
+  /*if (clickOne == 6 && continueTrue) {
     $('#topMessage').text("System recording. Press the sceen when  done");
     var d = new Date();
     var n = d.getTime();
@@ -201,12 +210,12 @@ $(document).on("tap", function() {
     $('#whole').css('background-color', 'red');
     continueTrue = false;
     selected = true;
-  }
+  }*/
 
-  if (clickOne == 7) {
+  if (clickOne == 2) {
     $('#topMessage').text("You are now ready to move to the next activity. Please allow a couple seconds");
     $('#topMessage').css('color', '#59595B');
-    $('#whole').css('background-color', 'white');
+    $('#whole').css('background-color', 'light gray');
     exerciseNumSurvey++;
     sessionStorage.setItem("exerciseNumSurvey", exerciseNumSurvey.toString());
     if (exerciseNumSurvey == 13) {
@@ -221,16 +230,20 @@ $(document).on("tap", function() {
         location.replace('/taskinit');}, 3000);
     }
   }
+
+
+
+
 })
 
-$('#continue').on("tap", function() {
+/*$('#continue').on("tap", function() {
   $('#continue').css('visibility', 'hidden');
   $('#topMessage').text("Press the screen before performing the activity.");
   $('#topMessage').css('color', 'white');
   $('#topMessage').css('font-size', '80px');
   $('#whole').css('background-color', 'green');
   continueTrue = true;
-})
+})*/
 
 
 $('#done').on("tap", function(){

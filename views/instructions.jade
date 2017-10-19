@@ -11,7 +11,7 @@ html
         script(src='/js/featuredisable.js')
         //script(src='/js/papaparse.js');
         script(type='text/javascript')
-        script(src='/js/taskinit.js')
+        script(src='/js/workspace.js')
         div.head
             p#headerContent
         div.notice
@@ -19,23 +19,28 @@ html
         body(margin="auto")
             div#centeredPatient
                 div#objectSetup
-                    div.centered
                         //span#SetupText Study Instructions
                         <p style="font-family:sans-serif;text-align:middle; font-size:50px; font-weight:bold;">Study Instructions </p>
-                        // we will use javascript to generate the starting image
-                        //br
-                        img#newobjectsUsed(src="../img/icons-all/activity_objects.jpg" width='35%', height='30%')
-                        //span You will perform each activity on the tabletop using one or more objects.
-                        <p style="font-family:sans-serif;text-align:middle; font-size:30px;">You will perform each activity on the tabletop using one or more objects. </p>
-
-
+                        br
+                        br
+                        <p style="font-family:sans-serif;text-align:middle;font-size:30px;">In this study, you will be asked to complete 12 activities. </p>
+                        //span In this study, you will be asked to complete 12 activities.
+                        <p style="font-family:sans-serif;text-align:middle;font-size:30px;">You will be asked to repeat each activity 4 times. </p>
+                        //span You will be asked to repeat each activity 4 times.
+                        br
+                        br
+                        br
+                        br
+                        //span Please press anywhere on the green area to move forward.
+                        <p style="font-family:sans-serif;text-align:middle;font-size:20px;">Please press anywhere on the green area to move forward. </p>
 
         div(onclick="move()")#start
             div.centered
                 div.forward
                     img(src="../img/icons-all/forward.png")
 
+
         script.
             function move() {
-                window.location.assign('/tasksetup/')
+                window.location.assign('/taskinit/')
             }

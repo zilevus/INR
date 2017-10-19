@@ -14,8 +14,8 @@ const logger = new Console(process.stdout, process.stderr);
 /*var client = net.connect(8888,'128.237.166.175',function(){
   console.log('Connected');
 });*/
-//var HOST='localhost'; //Change this back to localhost
-var HOST='128.173.21.172'; //Change this to whomever is hosting
+var HOST='localhost'; //Change this back to localhost
+//var HOST='128.173.21.172'; //Change this to whomever is hosting
 var PORT=8888;
 client.connect(PORT,HOST,function(){
   console.log('Connected');
@@ -64,6 +64,9 @@ app.get('/armprep/', routes.armprep);
 app.get('/preactivity/', routes.preactivity);
 app.get('/activitystarted/', routes.activitystarted);
 app.get('/thanks/', routes.thanks);
+app.get('/workspace/', routes.workspace);
+app.get('/instructions/', routes.instructions)
+
 var startTask="{\"type\" : \"startTask\"}";
 var resetTask="{\"type\" : \"resetTask\"}";
 var endTask="{\"type\" : \"endTask\"}";

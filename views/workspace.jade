@@ -11,7 +11,7 @@ html
         script(src='/js/featuredisable.js')
         //script(src='/js/papaparse.js');
         script(type='text/javascript')
-        script(src='/js/taskinit.js')
+        script(src='/js/workspace.js')
         div.head
             p#headerContent
         div.notice
@@ -19,23 +19,25 @@ html
         body(margin="auto")
             div#centeredPatient
                 div#objectSetup
-                    div.centered
-                        //span#SetupText Study Instructions
-                        <p style="font-family:sans-serif;text-align:middle; font-size:50px; font-weight:bold;">Study Instructions </p>
+                div.centered
+                        span#SetupText <p style="font-family:sans-serif;text-align:middle; font-size:50px; font-weight:bold;">Activity Workspace </p>
                         // we will use javascript to generate the starting image
-                        //br
-                        img#newobjectsUsed(src="../img/icons-all/activity_objects.jpg" width='35%', height='30%')
-                        //span You will perform each activity on the tabletop using one or more objects.
-                        <p style="font-family:sans-serif;text-align:middle; font-size:30px;">You will perform each activity on the tabletop using one or more objects. </p>
+                        //img#firstSetup(src="")
 
-
+                        img(src="../img/icons-all/workspace.jpg" height = "500" width = "500")
+                        br
+                        //span This is your workspace.
+                        <p style="font-family:sans-serif;text-align:middle;font-size:20px;">This is your workspace. </p>
+                        <p style="font-family:sans-serif;text-align:middle;font-size:20px;">Please press anywhere on the green area to move forward. </p>
+                        //span Please press anywhere on the green area to move forward.
 
         div(onclick="move()")#start
             div.centered
                 div.forward
                     img(src="../img/icons-all/forward.png")
 
+
         script.
             function move() {
-                window.location.assign('/tasksetup/')
+                window.location.assign('/instructions/')
             }

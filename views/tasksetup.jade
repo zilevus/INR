@@ -5,27 +5,32 @@ html
         link(href='/css/style.css', rel='stylesheet')
         link(href='/css/circle.css', rel='stylesheet')
         script(src='/socket.io/socket.io.js')
+        meta(name='apple-mobile-web-app-capable', content='yes')
         script(src='http://code.jquery.com/jquery-1.11.3.min.js')
         script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
         script(src='/js/featuredisable.js')
         //script(src='/js/papaparse.js');
         script(type='text/javascript')
-        script(src='/js/tasksetup.js')
+        script(src='/js/taskinit.js')
         div.head
-            p#headerContent 
+            p#headerContent
         div.notice
             //p#noticeContent
         body(margin="auto")
             div#centeredPatient
-                div#firstDiagram
+                div#objectSetup
                     div.centered
-                        span#firstDiagramText Place the object(s) on the highlighted area of the mat
-                        img#firstSetup(src="")
-                        // going to change this with the javascript each time I believe
-            div(onclick="move()")#start
-                div.centered
-                    div.forward
-                        img(src="../img/icons-all/forward.png")
+                        //span#SetupText Study Instructions
+                        <p style="font-family:sans-serif;text-align:middle; font-size:50px; font-weight:bold;">Study Instructions </p>
+                        img#newobjectsUsed(src="../img/icons-all/activity_setup.jpg" width='45%', height='40%')
+                        //span For each activity, you will setup your workspace according to the instructions.
+                        <p style="font-family:sans-serif;text-align:middle; font-size:30px;">For each activity, you will setup your workspace according to the instructions. </p>
+
+
+        div(onclick="move()")#start
+            div.centered
+                div.forward
+                    img(src="../img/icons-all/forward.png")
 
         script.
             function move() {

@@ -7,7 +7,8 @@ $(window).load(function() {
   var error_array = [];
     // this checks to make sure we can in fact read a file.
   if (window.File && window.FileReader && window.FileList && window.Blob) {
-      var fname = "file:///C:/Users/ephan/Documents"; // change this to local source
+    //  var fname = "file:///C:/Users/ephan/Documents"; // change this to local source
+        var fname = "/Users/ZilevuK/INR"; 
       var f = fname.target.files[0];
 
       if (f) {

@@ -15,6 +15,11 @@ p{
 	font-family:"Monserat";
 }
 
+html{
+background-color:  #c0c0c0;
+
+}
+
 .surveyMessage{
   text-align: center;
   font-size: 28px;

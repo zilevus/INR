@@ -11,14 +11,15 @@ html
         script(type='text/javascript')
         script(src='/js/activitystarted.js')
         div.head
-            p#headerContent 
+            p#headerContent
         div.notice
             p#noticeContent
         body(margin="auto")
             div(onclick="move()")#task
                 div#centeredStartTask
                     div.centered
-                        p#tasktext Activity In Progress Please Touch Screen When You Are Finished
+                        //p#tasktext Activity In Progress Please Touch Screen When You Are Finished
+                        <p style="font-family:sans-serif; font-size:50px; text-align:middle; font-weight:bold;">Activity In Progress Please Touch Screen When You Are Finished.</p>
             script.
                 function move() {
                     grabTime();

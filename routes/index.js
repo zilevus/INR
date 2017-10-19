@@ -28,3 +28,9 @@ exports.thanks=function(req, res) {
 exports.studyend=function(req, res) {
     res.render('studyend', {title:"Study Concluded"});
 }
+exports.workspace=function(req, res) {
+		res.render('workspace', {title:"Workspace"});
+}
+exports.instructions=function(req, res){
+		res.render('instructions', {title:"Instructions"})
+}
